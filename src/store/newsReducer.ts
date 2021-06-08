@@ -23,7 +23,10 @@ function filterNews(news: News[], filterText: string): News[] {
 
 export const fetchNewsThunk = createAsyncThunk(
     'news/fetchNews',
-    async () => await getNews()
+    async () => await getNews(),
+    {
+        condition: (_, api) => !!(api.getState() as RootState).news.articles,
+    }
 )
 
 export const newsSlice = createSlice({

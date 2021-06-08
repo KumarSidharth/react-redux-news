@@ -74,11 +74,11 @@ function App() {
                   pageSize={pageSize}
                   loading={loading}
                   components={{
-                    NoRowsOverlay: () =>
-                      (<p className="error">
+                    NoRowsOverlay: () => (
+                      <p className="error">
                         Can't show any news
-                        </p>
-                      )
+                      </p>
+                    )
                   }}
                   rowHeight={rowHeight}
         />

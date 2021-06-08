@@ -1,4 +1,4 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import {newsSlice} from './newsReducer';
 
 export const newsStore = configureStore({
@@ -7,11 +7,4 @@ export const newsStore = configureStore({
     },
 });
 
-export type AppDispatch = typeof newsStore.dispatch;
 export type RootState = ReturnType<typeof newsStore.getState>;
-export type AppThunk<ReturnType = void> = ThunkAction<
-    ReturnType,
-    RootState,
-    unknown,
-    Action<string>
->;
